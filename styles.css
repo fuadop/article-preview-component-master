@@ -1,0 +1,214 @@
+/* imports */
+@import url("https://fonts.google.com/specimen/Manrope");
+
+/* variables */
+:root {
+  --VeryDarkGrayishBlue: hsl(217, 19%, 35%);
+  --DesaturatedDarkBlue: hsl(214, 17%, 51%);
+  --GrayishBlue: hsl(212, 23%, 69%);
+  --LightGrayishBlue: hsl(210, 46%, 95%);
+}
+
+/* general styles */
+*,
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Manrope", sans-serif;
+}
+
+body {
+  background: var(--LightGrayishBlue);
+  height: 100vh;
+  width: 100vh;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/* main */
+.container {
+  width: 55vw;
+  height: 44vh;
+  border-radius: 10px;
+  background: white;
+  overflow: hidden;
+  display: flex;
+}
+
+.container img {
+  display: block;
+  height: inherit;
+}
+
+.info-container {
+  padding: 2.5rem;
+}
+
+.info-container h3 {
+  color: var(--VeryDarkGrayishBlue);
+}
+
+.info-container p {
+  color: var(--DesaturatedDarkBlue);
+  margin-top: 1rem;
+}
+
+/* profile section */
+.profile {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.profile div p {
+  margin-top: 0.2rem;
+}
+
+.profile img {
+  display: block;
+  border-radius: 50px;
+  width: 50px;
+  height: 50px;
+}
+
+.profile div {
+  padding-left: 1rem;
+}
+
+#profile-name {
+  color: var(--VeryDarkGrayishBlue) !important;
+  font-weight: 700;
+}
+
+.share-img-container {
+  background: var(--LightGrayishBlue);
+  width: 20px;
+  height: 20px;
+  padding: 7px;
+  margin-left: auto;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.share-img-container img {
+  display: block;
+  margin-right: 0.5rem;
+  width: 20px;
+  height: 20px;
+}
+
+/* share pop-up */
+
+.hidden {
+  display: none !important;
+}
+.share {
+  display: flex;
+  position: absolute;
+  right: 19%;
+  top: 46%;
+  padding: 1.5rem;
+  border-radius: 16px;
+  justify-content: space-evenly;
+  align-items: center;
+  background: var(--VeryDarkGrayishBlue);
+  box-shadow: 3px 3px 3px var(--DesaturatedDarkBlue);
+  opacity: 0.9;
+  padding: 1rem;
+}
+
+.share ::after {
+  content: "";
+  width: 0px;
+  height: 0px;
+  border-top: 30px solid var(--VeryDarkGrayishBlue);
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  transform: rotateZ(135deg);
+  position: absolute;
+  top: 66%;
+  left: 50%;
+  border-right: transparent;
+}
+
+.share h2 {
+  font-weight: 300;
+  font-size: 1rem;
+  color: var(--LightGrayishBlue);
+}
+
+.share ul {
+  list-style: none;
+  margin-left: 1rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+.share ul li {
+  margin-left: 1rem;
+}
+
+.share ul li i {
+  color: var(--LightGrayishBlue);
+  font-size: 1.8rem;
+}
+
+/* media queries */
+
+@media (max-width: 600px) {
+  /* body*/
+  body {
+    display: block;
+    margin: 1rem;
+    width: 95vw;
+  }
+
+  /* container*/
+  .container {
+    display: block;
+    width: 90vw;
+    height: auto;
+  }
+
+  .container img {
+    width: 90vw;
+  }
+
+  /*profile */
+
+  .profile img {
+    width: 50px;
+  }
+  #profile-name {
+    font-size: 0.8rem;
+  }
+
+  .share ::after {
+    display: none;
+  }
+  .share {
+    box-sizing: border-box;
+    padding-right: 4rem;
+    box-shadow: none;
+    border-radius: 0px;
+    position: fixed;
+    top: 72vh;
+    left: 4vw;
+    width: 90vw;
+    height: 10vh;
+  }
+  .share-img-container {
+    z-index: 2;
+  }
+
+  /* attribution */
+  .attribution {
+    margin-top: 1rem;
+    position: initial;
+  }
+}
